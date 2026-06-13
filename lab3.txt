@@ -1,0 +1,106 @@
+
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| ecommerce                |
+| information_schema       |
+| joins                    |
+| mysql                    |
+| performance_schema       |
+| sakila                   |
+| studentmanagementsysytem |
+| sys                      |
+| world                    |
++--------------------------+
+9 rows in set (0.02 sec)
+
+
+###Step 1: Create Database###
+
+
+mysql> create database demo;
+Query OK, 1 row affected (0.04 sec)
+
+###Step 2: Use Database###
+
+
+mysql> use demo;
+Database changed
+
+###Step 3: Create Student Table###
+
+
+mysql> create table student (student_id int primary key,first_name varchar(20)not null,last_name varchar(20)not null,age int not null,phone_no varchar(15)not null,address varchar(20)not null);
+Query OK, 0 rows affected (0.10 sec)
+
+###Step 4: Display Table Structure using DESC###
+
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| student_id | int         | NO   | PRI | NULL    |       |
+| first_name | varchar(20) | NO   |     | NULL    |       |
+| last_name  | varchar(20) | NO   |     | NULL    |       |
+| age        | int         | NO   |     | NULL    |       |
+| phone_no   | varchar(15) | NO   |     | NULL    |       |
+| address    | varchar(20) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+
+###Step 5: Insert Records###
+
+
+mysql> insert into student values(1,'Supriya','yadav',21,5478956387,'Mumbai');
+Query OK, 1 row affected (0.02 sec)
+
+
+mysql> insert into student values(2,'Pratiksha','jadhav',20,5478764087,'Nashik');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(3,'Sakshi','sahu',22,5432564087,'Pune');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(4,'Sonali','Gupta',24,5409874087,'Mumbai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(5,'Ranjana','jaiswal',21,5406547087,'Thane');
+Query OK, 1 row affected (0.01 sec)
+
+###Step 6: View All Records using SELECT###
+
+
+mysql> select*from student;
++------------+------------+-----------+-----+------------+---------+
+| student_id | first_name | last_name | age | phone_no   | address |
++------------+------------+-----------+-----+------------+---------+
+|          1 | Supriya    | yadav     |  21 | 5478956387 | Mumbai  |
+|          2 | Pratiksha  | jadhav    |  20 | 5478764087 | Nashik  |
+|          3 | Sakshi     | sahu      |  22 | 5432564087 | Pune    |
+|          4 | Sonali     | Gupta     |  24 | 5409874087 | Mumbai  |
+|          5 | Ranjana    | jaiswal   |  21 | 5406547087 | Thane   |
++------------+------------+-----------+-----+------------+---------+
+5 rows in set (0.00 sec)
+
+###Step 7: Display Records in Ascending Order of Last Name###
+
+mysql> select*from student order by last_name asc;
++------------+------------+-----------+-----+------------+---------+
+| student_id | first_name | last_name | age | phone_no   | address |
++------------+------------+-----------+-----+------------+---------+
+|          4 | Sonali     | Gupta     |  24 | 5409874087 | Mumbai  |
+|          2 | Pratiksha  | jadhav    |  20 | 5478764087 | Nashik  |
+|          5 | Ranjana    | jaiswal   |  21 | 5406547087 | Thane   |
+|          3 | Sakshi     | sahu      |  22 | 5432564087 | Pune    |
+|          1 | Supriya    | yadav     |  21 | 5478956387 | Mumbai  |
++------------+------------+-----------+-----+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
